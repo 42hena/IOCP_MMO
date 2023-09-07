@@ -2,7 +2,7 @@
 #include <Winsock2.h>
 #include <iostream>
 #include <Windows.h>
-
+#define SERVER_PORT 10201
 // global listen socket
 SOCKET g_listen_sock;
 
@@ -44,7 +44,7 @@ bool NetworkSetting()
 	}
 
 	ZeroMemory(&addr, sizeof(addr));
-	InitSockAddr(&addr, INADDR_ANY, 10801);
+	InitSockAddr(&addr, INADDR_ANY, SERVER_PORT);
 
 	bind_ret = bind(g_listen_sock, (SOCKADDR*)&addr, sizeof(addr));
 	if (bind_ret == SOCKET_ERROR)
@@ -53,7 +53,7 @@ bool NetworkSetting()
 		return false;
 	}
 
-	ioctlsocket_ret = ioctlsocket(g_listen_sock, FIONBIO, &nonBlockingMode);
+	ioctlsocket_ret = ioctlsocket(g_listen_sock, FIONBIO, &blockingMode);
 	if (ioctlsocket_ret == SOCKET_ERROR)
 	{
 		wprintf(L"[ServerOn] -> ioctlsocket() error\n");
@@ -64,6 +64,14 @@ bool NetworkSetting()
 	_linger.l_linger = 0;
 
 	setsockopt_ret = setsockopt(g_listen_sock, SOL_SOCKET, SO_LINGER, (char*)&_linger, sizeof(_linger));
+	if (setsockopt_ret == SOCKET_ERROR)
+	{
+		printf("[ServerOn] -> setsockopt() error\n");
+		return false;
+	}
+
+	int sendBufferSize = 0;
+	setsockopt_ret = setsockopt(g_listen_sock, SOL_SOCKET, SO_SNDBUF, (char*)&sendBufferSize, sizeof(sendBufferSize));
 	if (setsockopt_ret == SOCKET_ERROR)
 	{
 		printf("[ServerOn] -> setsockopt() error\n");

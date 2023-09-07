@@ -13,8 +13,44 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\NetworkSetting">
+    <Filter Include="소스 파일\Contents">
+      <UniqueIdentifier>{c719094f-1600-4e94-8b87-e5a8790fec24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Library">
+      <UniqueIdentifier>{1eda2e20-33c8-4812-b5c5-d1cf9c31d4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Library\ThreadInfo">
+      <UniqueIdentifier>{cea9db9d-2c7e-4ff9-bfad-ae8907a385b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Library\NetworkLibrary">
+      <UniqueIdentifier>{cc952074-295a-4652-8041-03333b38ecbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Library\NetworkSetting">
       <UniqueIdentifier>{6692e47d-8b66-47e6-89ec-1581502e28c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\가져온것들">
+      <UniqueIdentifier>{d87414b7-5405-45d7-a240-3f31fd7c8127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\가져온것들\직렬화 버퍼">
+      <UniqueIdentifier>{034a127e-4082-42e7-9697-f98f422714b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\가져온것들\RingBuffer">
+      <UniqueIdentifier>{ce8bbf12-9e82-4010-9fe6-610aa5dec079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Contents\열 이유 없는 것">
+      <UniqueIdentifier>{ee9ada64-2966-488f-b126-7c14c2c8d29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Contents\열 이유 없는 것\CreateMessage">
+      <UniqueIdentifier>{03df5473-9ce7-4aed-a064-4c006f0c6441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Contents\Util">
+      <UniqueIdentifier>{075feee6-edfe-4637-a880-716853ab17e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Contents\Message 처리">
+      <UniqueIdentifier>{cee73c96-db7f-44a2-a8b8-749a1b8ddfe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Contents\Update">
+      <UniqueIdentifier>{557e0b8c-9e4d-437c-9663-13b27e7219c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -22,12 +58,63 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="NetworkSetting.cpp">
-      <Filter>소스 파일\NetworkSetting</Filter>
+      <Filter>소스 파일\Library\NetworkSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadInfo.cpp">
+      <Filter>소스 파일\Library\ThreadInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkLibrary.cpp">
+      <Filter>소스 파일\Library\NetworkLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="CRingBuffer.cpp">
+      <Filter>헤더 파일\가져온것들\RingBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CSerializationBuffer.cpp">
+      <Filter>헤더 파일\가져온것들\직렬화 버퍼</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketProc.cpp">
+      <Filter>소스 파일\Contents\Message 처리</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateMessage.cpp">
+      <Filter>소스 파일\Contents\열 이유 없는 것\CreateMessage</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>소스 파일\Contents\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetworkSetting.h">
-      <Filter>소스 파일\NetworkSetting</Filter>
+      <Filter>소스 파일\Library\NetworkSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadInfo.h">
+      <Filter>소스 파일\Library\ThreadInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="session.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkLibrary.h">
+      <Filter>소스 파일\Library\NetworkLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="CRingBuffer.h">
+      <Filter>헤더 파일\가져온것들\RingBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CSerializationBuffer.h">
+      <Filter>헤더 파일\가져온것들\직렬화 버퍼</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryPool.h">
+      <Filter>헤더 파일\가져온것들</Filter>
+    </ClInclude>
+    <ClInclude Include="PACKET_PROTOCOL.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateMessage.h">
+      <Filter>소스 파일\Contents\열 이유 없는 것\CreateMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>소스 파일\Contents\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketProc.h">
+      <Filter>소스 파일\Contents\Message 처리</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
